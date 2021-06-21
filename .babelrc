@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    "inline-react-svg",
+    ["babel-plugin-module-resolver", 
+      {"root": ["."], 
+        "alias": {"@/images": "./public/images"}
+      }
+  ]
+]
+}

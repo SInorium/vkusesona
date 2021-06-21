@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "Acrom";
+  src: local("/fonts/Acrom-Bold"), local("/fonts/Acrom Bold"),
+    url("/fonts/Acrom-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("/fonts/Inter-Regular"), local("/fonts/Inter Regular"),
+    url("/fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("/fonts/Inter-Bold"), local("/fonts/Inter Bold"),
+    url("/fonts/Inter-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --red: #d03c45;
+
+  --dark-gray: #a9abb1;
+  --secondary-gray: #dfe1e8;
+  --secondary-light-gray: #eff1f5;
+
+  --green: #067935;
+  --secondary-green: #629e44;
+  --secondary-light-green: #e2f0db;
+
+  --yellow: #ffd84f;
+  --primary-yellow-gray: #c6a664;
+  --primary-orange: #f59c16;
+
+  --brown: #a8602e;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  font-family: "Inter";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-variant-ligatures: none;
+}
+
+.black {
+  color: var(--black);
+}
+.white {
+  color: var(--white);
+}
+.red {
+  color: var(--red);
+}
+.dark-gray {
+  color: var(--dark-gray);
+}
+.secondary-gray {
+  color: var(--secondary-gray);
+}
+.secondary-light-gray {
+  color: var(--secondary-light-gray);
+}
+.green {
+  color: var(--green);
+}
+.secondary-green {
+  color: var(--secondary-green);
+}
+.secondary-light-green {
+  color: var(--secondary-light-green);
+}
+.yellow {
+  color: var(--yellow);
+}
+.primary-yellow-gray {
+  color: var(--primary-yellow-gray);
+}
+.primary-orange {
+  color: var(--primary-orange);
+}
+.brown {
+  color: var(--brown);
+}
+
+h1 {
+  //48px
+  font-size: 3rem;
+}
+
+h2 {
+  //32px
+  font-size: 2rem;
+}
+
+h3 {
+  //25px
+  font-size: 1.562rem;
+}
+
+h4 {
+  //18px
+  font-size: 1.125rem;
+}
+
+.text-lg {
+  //16px
+  font-size: 1rem;
+  font-weight: 400;
+
+  &--b {
+    font-weight: 600;
+  }
+}
+.text-sm {
+  //13px
+  font-size: 0.8125rem;
+  font-weight: 400;
+
+  &--b {
+    font-weight: 600;
+  }
+}
+.text-xs {
+  //13px
+  font-size: 0.6875rem;
+  font-weight: 400;
+
+  &--b {
+    font-weight: 600;
+  }
+}
+
+//flex class helpers
+
+.d-flex {
+  display: flex;
+}
+.justify {
+  &-space {
+    &-between {
+      justify-content: space-between;
+    }
+    &-around {
+      justify-content: space-around;
+    }
+  }
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+.focusRing___1airF.carousel__slide-focus-ring {
+  outline: none !important;
+}
+// .custom-scroll::-webkit-scrollbar {
+//   background-color: #fff;
+//   width: 16px;
+// }
+
+// /* background of the scrollbar except button or resizer */
+
+// .custom-scroll::-webkit-scrollbar-track {
+//   background-color: #fff;
+// }
+
+// /* scrollbar itself */
+// .custom-scroll::-webkit-scrollbar-thumb {
+//   background-color: #babac0;
+//   border-radius: 16px;
+//   border: 4px solid #fff;
+// }
+
+// /* set button(top and bottom of the scrollbar) */
+// .custom-scroll::-webkit-scrollbar-button {
+//   display:none;
+// }

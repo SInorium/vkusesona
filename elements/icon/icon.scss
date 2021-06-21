@@ -1,0 +1,104 @@
+$colors: --black, --blue, --dark-gray, --light-gray, --green, --light-green,
+  --orange, --yellow, --white;
+
+.icon {
+  /* colors */
+  @each $color in $colors {
+    &.icon#{$color} {
+      &-airplane,
+      &-arrow,
+      &-case,
+      &-ring,
+      &-eye,
+      &-eye-closed,
+      &-location,
+      &-check,
+      &-woman-cycle,
+      &-cards,
+      &-magnifier,
+      &-profile,
+      &-heart,
+      &-close,
+      &-revert,
+      &-camera {
+        path {
+          stroke: var($color);
+        }
+      }
+      &-magnifier,
+      &-profile {
+        circle {
+          stroke: var($color);
+        }
+      }
+      &-cheers,
+      &-arrow-back,
+      &-filled-heart,
+      &-telegram,
+      &-whatsapp,
+      &-phone {
+        path {
+          fill: var($color);
+        }
+      }
+      &-cross {
+        rect {
+          fill: var($color);
+        }
+      }
+      &-eye,
+      &-woman-cycle {
+        circle {
+          fill: var($color);
+        }
+      }
+      &-map {
+        path {
+          stroke: var($color);
+        }
+        path:last-of-type {
+          fill: var($color);
+          stroke: none;
+        }
+        ellipse {
+          stroke: var($color);
+        }
+      }
+      &--pencil {
+        & path {
+          stroke: var($color);
+        }
+      }
+    }
+  }
+  /* sizes */
+  &--xxs {
+    height: 12px;
+    width: 12px;
+  }
+
+  &--xs {
+    height: 16px;
+    width: 16px;
+  }
+  &--sm {
+    height: 20px;
+    width: 20px;
+  }
+  &--md {
+    height: 24px;
+    width: 24px;
+  }
+  &--mdp {
+    height: 28px;
+    width: 28px;
+  }
+  &--lg {
+    height: 38px;
+    width: 38px;
+  }
+  &--xl {
+    height: 72px;
+    width: 72px;
+  }
+}
