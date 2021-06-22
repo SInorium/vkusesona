@@ -16,6 +16,26 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <Header />
+        <span className={styles.logo}>
+          <Image
+            src="/images/icons/vercel.svg"
+            alt="Vercel Logo"
+            width={72}
+            height={16}
+          />
+          <Image
+            src="/images/icons/search.svg"
+            alt="search-icon"
+            width={72}
+            height={16}
+          ></Image>
+          <Image
+            src="/images/icons/quot.svg"
+            alt="quot"
+            width={5}
+            height={10}
+          ></Image>
+        </span>
         <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
@@ -58,20 +78,6 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by{" "}
-          <span className={styles.logo}>
-            <Image
-              src="/images/icons/vercel.svg"
-              alt="Vercel Logo"
-              width={72}
-              height={16}
-            />
-            <Image
-              src="/images/icons/search.svg"
-              alt="asd"
-              width={72}
-              height={16}
-            ></Image>
-          </span>
         </a>
       </footer>
     </div>

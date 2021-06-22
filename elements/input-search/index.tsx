@@ -1,24 +1,31 @@
 import React from "react";
-// import Image from "next/image";
-// import search from "@/images/icons/search.svg";
-
+import Search from "@/images/icons/search.svg";
+import Quot from "@/images/icons/quot.svg";
+import styles from "./input-search.module.scss";
 export interface InputSearchProps {
   value?: string;
   placeholder?: string;
+  iconType: string;
 }
 
 const InputSearch: React.FC<InputSearchProps> = (props) => {
-  const { value, placeholder } = props;
+  const { value, placeholder, iconType } = props;
 
   return (
-    <label className="input-search__label">
+    <label className={styles.input}>
       <input
         type="search"
         value={value}
-        placeholder={placeholder}
-        className="input-search"
+        // data-error={}
+        placeholder={placeholder || "Placeholder "}
       />
-      {/* <Image src={search} /> */}
+      {iconType === "search" ? (
+        <Search className={styles.input__icon} />
+      ) : (
+        <button type="submit" className={styles.button}>
+          <Quot className={styles.button__icon} />
+        </button>
+      )}
     </label>
   );
 };

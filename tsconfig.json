@@ -22,6 +22,6 @@
       "@/utils": ["utils"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "elements/input-search/index.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "elements/input-search/index.jsx", "pages/_app.tsx"],
   "exclude": ["node_modules"]
 }
