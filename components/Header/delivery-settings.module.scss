@@ -1,0 +1,18 @@
+.list {
+  align-items: center;
+  margin: 0 120px;
+  margin-bottom: 8px;
+
+  &_item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+.icon {
+  margin-right: 12px;
+  path,
+  circle {
+    stroke: var(--primary-yellow-gray);
+  }
+}
