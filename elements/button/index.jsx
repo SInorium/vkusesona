@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Button = () => {
+const Button = (props) => {
+  const {className = '', color, children, transparent, disabled, p}
   return (
     <button>
       

@@ -87,9 +87,9 @@ const ProductCategory = [
 ];
 const Header = () => {
   return (
-    <>
+    <header className={headerStyle.header}>
       <DeliverySettings />
-      <header className={headerStyle.wrapper}>
+      <div className={headerStyle.wrapper}>
         <Logo className={headerStyle.logo} />
         <InputSearch
           iconType={"search"}
@@ -117,9 +117,9 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-      </header>
+      </div>
       <ProductNavigation category={ProductCategory} />
-    </>
+    </header>
   );
 };
 
