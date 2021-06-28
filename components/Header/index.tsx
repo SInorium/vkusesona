@@ -1,5 +1,6 @@
 import React from "react";
 import { InputSearch, Switcher } from "@/elements";
+import { useWindowScroll } from "@/hooks";
 
 import headerStyle from "./header.module.scss";
 import deliverySettingsStyle from "./delivery-settings.module.scss";
@@ -86,8 +87,10 @@ const ProductCategory = [
   "Специи и соусы",
 ];
 const Header = () => {
+  const scroll = useWindowScroll();
+  const isHiddenHeader = scroll > 30;
   return (
-    <header className={headerStyle.header}>
+    <header className={headerStyle.header} data-hidden={isHiddenHeader}>
       <DeliverySettings />
       <div className={headerStyle.wrapper}>
         <Logo className={headerStyle.logo} />

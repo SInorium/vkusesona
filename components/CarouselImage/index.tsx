@@ -2,8 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Carousel, { RenderArrowProps } from "react-elastic-carousel";
 
-import styles from "./carouselImage.module.scss";
-
 import Quot from "@/images/icons/quot.svg";
 
 interface CarouselItemProps {
@@ -17,19 +15,21 @@ const CarouselItem: React.FC<CarouselItemProps> = (props) => {
       <div className="slider-item__text-wrapper">
         <h2 className="slider-item__title">Масленичная скидка на все блины</h2>
         <p className="slider-item__description">
-          Каждый третий блин бесплатно, даже если он вышел комом
+          Каждый третий блин бесплатно, <br /> даже если он вышел комом
         </p>
         <a className="slider-item__link text-sm--b" href="#">
           Подробнее <Quot className="icon" />
         </a>
       </div>
-      <Image
+      <img className="slider-item__image" src={imgPath} alt="hero-image" />
+      {/* <Image
+        
         className="slider-item__image"
-        width={"100%"}
+        width={1200}
         height={"auto"}
         src={imgPath}
         alt="img"
-      />
+      /> */}
     </div>
   );
 };
@@ -51,9 +51,9 @@ const Arrow = ({ type, onClick, isEdge }: RenderArrowProps) => {
 const CarouselImage: React.FC<CarouselImageProps> = (props) => {
   const { imgUrls } = props;
   return (
-    <article className={"carousel_wrapper"}>
+    <article className={"slider-wrapper"}>
       <Carousel
-        className={"carousel_slider"}
+        className={"slider"}
         isRTL={false}
         itemsToShow={1}
         pagination={false}
