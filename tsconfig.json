@@ -19,7 +19,8 @@
       "@/elements": ["elements"],
       "@/styles/*": ["public/styles/*"],
       "@/images/*": ["public/images/*"],
-      "@/hooks": ["utils/hooks/index.ts"]
+      "@/hooks": ["utils/hooks/index.ts"],
+
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "elements/input-search/index.jsx", "pages/_app.tsx"],

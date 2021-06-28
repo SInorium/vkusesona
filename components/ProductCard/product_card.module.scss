@@ -1,0 +1,109 @@
+.product_card {
+  position: relative;
+
+  display: grid;
+  grid-template-rows: 167px 1fr;
+  grid-template-columns: 1fr;
+
+  max-width: 224px;
+  padding: 0 16px 16px;
+
+  border: 1px solid var(--secondary-gray);
+  border-radius: 10px;
+
+  &__icon_like {
+    position: absolute;
+    top: 13px;
+    right: 16px;
+    z-index: 1;
+
+    cursor: pointer;
+
+    & > path {
+      stroke: var(--dark-gray);
+    }
+  }
+
+  &__tag_wrapper {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+  }
+
+  &__tag {
+    position: relative;
+    padding: 4px;
+
+    border-radius: 6px;
+    color: var(--white);
+    text-transform: capitalize;
+    z-index: 1;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+    &[data-color_tag="новинка"] {
+      background-color: var(--green);
+      color: var(--white);
+    }
+    &[data-color_tag="хит"] {
+      background-color: var(--brown);
+      color: var(--white);
+    }
+    &[data-color_discount="true"] {
+      background-color: var(--yellow);
+      color: var(--black);
+    }
+  }
+
+  &__image {
+    margin-bottom: 1rem;
+  }
+
+  &__description_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+
+  &__description {
+    min-height: 28px;
+    margin-bottom: 0.5rem;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px 0;
+
+    border: transparent;
+    border-radius: 8px;
+    background-color: var(--secondary-green);
+    color: var(--white);
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--light-green);
+    }
+
+    &_icon {
+      margin-left: 0.5rem;
+      cursor: pointer;
+      > path {
+        fill: var(--white);
+      }
+    }
+  }
+}

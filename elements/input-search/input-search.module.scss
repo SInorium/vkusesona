@@ -13,7 +13,7 @@
     border: 1px solid transparent;
 
     &::placeholder {
-      color: var(--grey);
+      color: var(--gray);
     }
 
     &[data-error="true"] {
@@ -22,7 +22,7 @@
     }
 
     &:hover {
-      color: var(--grey);
+      color: var(--gray);
     }
     &:active,
     &:focus {

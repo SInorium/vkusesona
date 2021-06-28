@@ -27,12 +27,14 @@
   --red: #d03c45;
 
   --dark-gray: #a9abb1;
-  --grey: #808080;
+  --gray: #808080;
   --secondary-gray: #dfe1e8;
   --secondary-light-gray: #eff1f5;
 
   --green: #067935;
+  --light-green: #6db847;
   --secondary-green: #629e44;
+
   --secondary-light-green: #e2f0db;
 
   --yellow: #ffd84f;
@@ -111,6 +113,10 @@ ul {
 .red {
   color: var(--red);
 }
+
+.gray {
+  color: var(--gray);
+}
 .dark-gray {
   color: var(--dark-gray);
 }
@@ -177,6 +183,7 @@ h4 {
   font-weight: 400;
 
   &--b {
+    font-size: 0.8125rem;
     font-weight: 600;
   }
 }
@@ -187,8 +194,13 @@ h4 {
   font-weight: 400;
 
   &--b {
+    font-size: 0.6875rem;
     font-weight: 600;
   }
+}
+
+.cross {
+  text-decoration: line-through;
 }
 
 //flex class helpers

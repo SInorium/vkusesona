@@ -2,10 +2,17 @@ import Head from "next/head";
 import styles from "../public/styles/Home.module.css";
 import Header from "components/Header";
 import CarouselImage from "components/CarouselImage";
+import ProductCard from "components/ProductCard";
+
 const mockData = [
   "/images/hero_image.png",
   "/images/hero_image.png",
   "/images/hero_image.png",
+];
+
+const productImage = [
+  "/images/product_card.png",
+  "/images/product_card__2.png",
 ];
 export default function Home() {
   return (
@@ -18,6 +25,9 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
         <CarouselImage imgUrls={mockData} />
+        <div>
+          <ProductCard productImage={productImage} price={400} discount={10} />
+        </div>
       </main>
     </div>
   );
