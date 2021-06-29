@@ -1,8 +1,10 @@
 import Head from "next/head";
-import styles from "../public/styles/Home.module.css";
 import Header from "components/Header";
 import CarouselImage from "components/CarouselImage";
 import ProductCard from "components/ProductCard";
+import CarouselProduct from "components/CarouselProduct";
+
+import styles from "../public/styles/Home.module.css";
 
 const mockData = [
   "/images/hero_image.png",
@@ -10,9 +12,79 @@ const mockData = [
   "/images/hero_image.png",
 ];
 
-const productImage = [
-  "/images/product_card.png",
-  "/images/product_card__2.png",
+const productCards = [
+  {
+    imageUrl: "/images/product_card.png",
+    imageAlt: "паштет",
+    price: 400,
+    discount: 0,
+  },
+  {
+    imageUrl: "/images/product_card__2.png",
+    imageAlt: "не паштет",
+    price: 200,
+    discount: 10,
+  },
+  {
+    imageUrl: "/images/product_card.png",
+    imageAlt: "паштет",
+    price: 400,
+    discount: 0,
+  },
+  {
+    imageUrl: "/images/product_card__2.png",
+    imageAlt: "не паштет",
+    price: 200,
+    discount: 10,
+  },
+  {
+    imageUrl: "/images/product_card.png",
+    imageAlt: "паштет",
+    price: 400,
+    discount: 0,
+  },
+  {
+    imageUrl: "/images/product_card__2.png",
+    imageAlt: "не паштет",
+    price: 200,
+    discount: 10,
+  },
+  {
+    imageUrl: "/images/product_card.png",
+    imageAlt: "паштет",
+    price: 400,
+    discount: 0,
+  },
+  {
+    imageUrl: "/images/product_card__2.png",
+    imageAlt: "не паштет",
+    price: 200,
+    discount: 10,
+  },
+  {
+    imageUrl: "/images/product_card.png",
+    imageAlt: "паштет",
+    price: 400,
+    discount: 0,
+  },
+  {
+    imageUrl: "/images/product_card__2.png",
+    imageAlt: "не паштет",
+    price: 200,
+    discount: 10,
+  },
+  {
+    imageUrl: "/images/product_card.png",
+    imageAlt: "паштет",
+    price: 400,
+    discount: 0,
+  },
+  {
+    imageUrl: "/images/product_card__2.png",
+    imageAlt: "не паштет",
+    price: 200,
+    discount: 10,
+  },
 ];
 export default function Home() {
   return (
@@ -25,8 +97,20 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
         <CarouselImage imgUrls={mockData} />
-        <div>
-          <ProductCard productImage={productImage} price={400} discount={10} />
+        <div className={"d-flex--column"}>
+          <CarouselProduct>
+            {productCards.map((product, id) => {
+              return (
+                <ProductCard
+                  key={product.imageAlt && id}
+                  imageUrl={product.imageUrl}
+                  imageAlt={product.imageAlt}
+                  price={product.price}
+                  discount={product.discount}
+                />
+              );
+            })}
+          </CarouselProduct>
         </div>
       </main>
     </div>

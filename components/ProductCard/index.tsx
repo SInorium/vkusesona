@@ -35,13 +35,14 @@ const ProductTag: FC<ProductTagProps> = (props) => {
 };
 
 interface ProductCardProps {
-  productImage: string[];
-  discount?: number;
+  imageUrl: string;
+  imageAlt: string;
   price: number;
+  discount?: number;
 }
 
 const ProductCard: FC<ProductCardProps> = (props) => {
-  const { productImage, price, discount = 0 } = props;
+  const { imageUrl, imageAlt, price, discount = 0 } = props;
   const discountPrice = ((100 - discount) * price) / 100;
   return (
     <div className={styles.product_card}>
@@ -49,7 +50,8 @@ const ProductCard: FC<ProductCardProps> = (props) => {
       <ProductTag tagName={undefined} discount={35} />
       <Image
         className={styles.product_card__image}
-        src={productImage[1]}
+        src={imageUrl}
+        alt={imageAlt}
         width={224}
         height={167}
       />

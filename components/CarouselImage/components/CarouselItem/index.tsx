@@ -21,15 +21,14 @@ const CarouselItem: React.FC<CarouselItemProps> = (props) => {
           Подробнее <Quot className="icon" />
         </a>
       </div>
-      <img className="slider-item__image" src={imgPath} alt="hero-image" />
-      {/* <Image
-        
+      {/* <img className="slider-item__image" src={imgPath} alt="hero-image" /> */}
+      <Image
         className="slider-item__image"
-        width={1200}
-        height={"auto"}
+        width={713}
+        height={404}
         src={imgPath}
         alt="img"
-      /> */}
+      />
     </div>
   );
 };

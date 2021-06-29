@@ -16,6 +16,7 @@ const CarouselImage: React.FC<CarouselImageProps> = (props) => {
         itemsToShow={1}
         pagination={false}
         renderArrow={CarouselButton}
+        itemPadding={[0]}
       >
         {imgUrls.map((item, id) => {
           return <CarouselItem imgPath={item} key={id} />;

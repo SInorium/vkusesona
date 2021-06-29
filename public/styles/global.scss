@@ -36,6 +36,7 @@
   --secondary-green: #629e44;
 
   --secondary-light-green: #e2f0db;
+  --secondary-lightest-green: #e1f4d7;
 
   --yellow: #ffd84f;
   --primary-yellow-gray: #c6a664;
@@ -207,6 +208,11 @@ h4 {
 
 .d-flex {
   display: flex;
+
+  &--column {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .justify {
   &-space {

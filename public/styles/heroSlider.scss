@@ -77,7 +77,8 @@
   width: 40px;
   height: 40px;
 
-  border: transparent;
+  border: 1px solid var(--secondary-gray);
+
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(40px);
@@ -85,6 +86,8 @@
 
   cursor: pointer;
   z-index: 1;
+
+  transition: all 100ms linear;
 
   .slider-icon {
     width: 7;
@@ -94,14 +97,22 @@
     }
   }
 
-  &:hover:enabled {
-    background-color: #e1f4d7;
-  }
-
   &:first-child {
     right: 112px;
     > svg {
       transform: rotate(180deg);
+    }
+  }
+  &:hover:enabled {
+    border-color: var(--secondary-green);
+  }
+  &:disabled {
+    border: 1px solid var(--dark-gray);
+
+    & > svg {
+      path {
+        stroke: var(--dark-gray);
+      }
     }
   }
 }
