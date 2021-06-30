@@ -22,7 +22,7 @@ const ProductTag: FC<ProductTagProps> = (props) => {
           {tagName}
         </span>
       ) : null}
-      {discount ? (
+      {discount !== 0 ? (
         <span
           data-color_discount={!!discount}
           className={styles.product_card__tag + " text-xs--b"}
@@ -39,15 +39,16 @@ interface ProductCardProps {
   imageAlt: string;
   price: number;
   discount?: number;
+  tagName?: string;
 }
 
 const ProductCard: FC<ProductCardProps> = (props) => {
-  const { imageUrl, imageAlt, price, discount = 0 } = props;
+  const { imageUrl, imageAlt, price, discount = 0, tagName } = props;
   const discountPrice = ((100 - discount) * price) / 100;
   return (
     <div className={styles.product_card}>
       <Like className={styles.product_card__icon_like} />
-      <ProductTag tagName={undefined} discount={35} />
+      <ProductTag tagName={tagName} discount={discount} />
       <Image
         className={styles.product_card__image}
         src={imageUrl}

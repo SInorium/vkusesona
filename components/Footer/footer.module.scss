@@ -1,0 +1,27 @@
+.wrapper {
+  position: relative;
+  padding-top: 0;
+
+  &_container {
+    padding-top: 0;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+
+  width: 100%;
+
+  background-color: var(--secondary-lightest-green);
+}
+
+.title {
+  margin-right: 2rem;
+}
+
+.input_wrapper {
+  max-width: 326px;
+}

@@ -1,5 +1,4 @@
 import React from "react";
-import { CarouselButton } from "components/CarouselImage/components";
 import Carousel, { RenderArrowProps } from "react-elastic-carousel";
 
 import styles from "./product_category.module.scss";
@@ -18,15 +17,15 @@ const Button = ({ type, onClick, isEdge }: RenderArrowProps) => {
 
 interface CarouselProductProps {
   children: Element[] | any;
+  title: string;
 }
 
 const CarouselProduct: React.FC<CarouselProductProps> = (props) => {
+  const { title } = props;
   return (
     <div className={styles.category_product__wrapper}>
       <div className={styles.category_description__wrapper}>
-        <h2 className={styles.category_description__title}>
-          Популярные товары
-        </h2>{" "}
+        <h2 className={styles.category_description__title}>{title}</h2>{" "}
         <a className={styles.category_description__link + " text-sm--b d-flex"}>
           Все <Quot className={styles.icon} />
         </a>

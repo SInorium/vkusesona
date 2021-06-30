@@ -6,13 +6,14 @@ export interface InputSearchProps {
   value?: string;
   placeholder?: string;
   iconType: string;
+  className?: string;
 }
 
 const InputSearch: React.FC<InputSearchProps> = (props) => {
-  const { value, placeholder, iconType } = props;
+  const { value, placeholder, iconType, className } = props;
 
   return (
-    <label className={styles.input}>
+    <label className={className || styles.input}>
       <input
         type="search"
         value={value}

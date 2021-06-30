@@ -39,6 +39,7 @@
   --secondary-lightest-green: #e1f4d7;
 
   --yellow: #ffd84f;
+  --light-yellow: #fdf3dd;
   --primary-yellow-gray: #c6a664;
   --primary-orange: #f59c16;
 
@@ -237,6 +238,12 @@ h4 {
 }
 .focusRing___1airF.carousel__slide-focus-ring {
   outline: none !important;
+}
+
+.next-image__wrapper {
+  & > div {
+    z-index: -1;
+  }
 }
 // .custom-scroll::-webkit-scrollbar {
 //   background-color: #fff;
