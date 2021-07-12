@@ -1,0 +1,35 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  max-width: 300px;
+  border: 1px solid var(--secondary-gray);
+  border-radius: 10px;
+}
+
+.image {
+}
+
+.description_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0.5rem;
+}
+
+.title {
+  margin-bottom: 0.25rem;
+}
+
+.price_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.recomend_tag {
+  line-height: 110%;
+}
+
+.price {
+  margin-left: 0.25rem;
+}

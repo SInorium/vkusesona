@@ -27,24 +27,45 @@
   --red: #d03c45;
 
   --dark-gray: #a9abb1;
+  --gray: #808080;
   --secondary-gray: #dfe1e8;
   --secondary-light-gray: #eff1f5;
 
   --green: #067935;
+  --light-green: #6db847;
   --secondary-green: #629e44;
+
   --secondary-light-green: #e2f0db;
+  --secondary-lightest-green: #e1f4d7;
 
   --yellow: #ffd84f;
+  --light-yellow: #fdf3dd;
   --primary-yellow-gray: #c6a664;
   --primary-orange: #f59c16;
 
   --brown: #a8602e;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+  font-variant-ligatures: none;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
+  font-size: 16px;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Acrom";
 }
 
 a {
@@ -52,12 +73,37 @@ a {
   text-decoration: none;
 }
 
-* {
-  font-family: "Inter";
-  box-sizing: border-box;
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  margin: 0;
+  box-shadow: none;
+  background-color: transparent;
+  letter-spacing: inherit;
+  outline: none;
+}
+
+button,
+input,
+select,
+textarea,
+a,
+div {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg {
+  display: block;
+  -webkit-user-drag: none;
+}
+
+ul {
   margin: 0;
   padding: 0;
-  font-variant-ligatures: none;
+  list-style: none;
 }
 
 .black {
@@ -68,6 +114,10 @@ a {
 }
 .red {
   color: var(--red);
+}
+
+.gray {
+  color: var(--gray);
 }
 .dark-gray {
   color: var(--dark-gray);
@@ -135,24 +185,40 @@ h4 {
   font-weight: 400;
 
   &--b {
+    font-size: 0.8125rem;
     font-weight: 600;
   }
 }
+
 .text-xs {
-  //13px
+  //11px
   font-size: 0.6875rem;
   font-weight: 400;
 
   &--b {
+    font-size: 0.6875rem;
     font-weight: 600;
   }
+}
+
+.cross {
+  text-decoration: line-through;
 }
 
 //flex class helpers
 
 .d-flex {
   display: flex;
+
+  &--column {
+    display: flex;
+    flex-direction: column;
+  }
 }
+.d-inline-flex {
+  display: inline-flex;
+}
+
 .justify {
   &-space {
     &-between {
@@ -160,6 +226,9 @@ h4 {
     }
     &-around {
       justify-content: space-around;
+    }
+    &-evenly {
+      justify-content: space-evenly;
     }
   }
 }
@@ -173,6 +242,12 @@ h4 {
 }
 .focusRing___1airF.carousel__slide-focus-ring {
   outline: none !important;
+}
+
+.next-image__wrapper {
+  & > div {
+    z-index: -1;
+  }
 }
 // .custom-scroll::-webkit-scrollbar {
 //   background-color: #fff;

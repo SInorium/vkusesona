@@ -1,0 +1,21 @@
+.list {
+  justify-content: center;
+  margin-top: 1rem;
+  &_item {
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:not(:last-child) {
+      &::after {
+        content: "\2022";
+        width: 4px;
+        height: 4px;
+        margin: 0 1.125rem;
+        color: var(--green);
+      }
+    }
+    &:hover {
+      color: var(--green);
+    }
+  }
+}

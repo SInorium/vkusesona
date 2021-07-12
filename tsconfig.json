@@ -5,6 +5,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    // "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -19,6 +20,8 @@
       "@/elements": ["elements"],
       "@/styles/*": ["public/styles/*"],
       "@/images/*": ["public/images/*"],
+      "@/hooks": ["utils/hooks/index.ts"],
+      "@/types": ["types/index.ts"],
       "@/utils": ["utils"]
     }
   },

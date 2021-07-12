@@ -1,0 +1,14 @@
+.product_slider {
+  position: relative;
+  max-width: 800px;
+
+  .rec-slider-container {
+    margin: 0;
+  }
+  .slider-button {
+    &:first-child {
+      right: 64px;
+    }
+    right: 16px;
+  }
+}

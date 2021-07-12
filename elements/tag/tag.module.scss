@@ -1,0 +1,46 @@
+.tag_wrapper {
+  // position: relative;
+  z-index: 1;
+  display: inline-flex;
+  top: 8px;
+  left: 8px;
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+
+.tag {
+  // position: absolute;
+  width: fit-content;
+  padding: 4px;
+
+  border-radius: 6px;
+  color: var(--white);
+  text-transform: capitalize;
+  white-space: nowrap;
+  z-index: 1;
+
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  &[data-color_tag="новинка"] {
+    background-color: var(--green);
+    color: var(--white);
+  }
+
+  &[data-color_tag="хит"] {
+    background-color: var(--brown);
+    color: var(--white);
+  }
+
+  &[data-color_tag="true"] {
+    background-color: var(--green);
+    color: var(--white);
+  }
+
+  &[data-color_discount="true"] {
+    background-color: var(--yellow);
+    color: var(--black);
+  }
+}
