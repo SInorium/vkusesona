@@ -6,6 +6,8 @@ import ProductCard from "./ProductCard";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import Container from "./Container";
+import MobileMenu from "./MobileMenu";
+import Sidebar from "./Sidebar";
 
 export {
   Header,
@@ -16,4 +18,6 @@ export {
   Banner,
   Footer,
   Container,
+  MobileMenu,
+  Sidebar,
 };

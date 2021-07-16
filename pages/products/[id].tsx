@@ -31,7 +31,7 @@ import styles from "./styles.module.scss";
 import Document from "@/images/icons/document.svg";
 import Plus from "@/images/icons/plus.svg";
 import Quot from "@/images/icons/quot.svg";
-import Like from "@/images/icons/like.svg";
+import Like from "@/images/icons/like";
 import Cart from "@/images/icons/cart.svg";
 
 export async function getStaticPaths() {

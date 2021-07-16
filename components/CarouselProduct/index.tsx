@@ -22,6 +22,17 @@ interface CarouselProductProps {
   isHeading?: boolean;
 }
 
+const breakPoints = [
+  //mobile
+  { width: 343, itemsToShow: 2, itemsToScroll: 2, itemPadding: [0, 7, 0, 0] },
+  //tablet_md
+  { width: 658, itemsToShow: 3 },
+  // tablet_lg
+  { width: 700, itemsToShow: 3.6 },
+  //desctop_sm
+  { width: 900, itemsToShow: 5 },
+];
+
 const CarouselProduct: React.FC<CarouselProductProps> = (props) => {
   const { title, isHeading } = props;
   return (
@@ -31,8 +42,9 @@ const CarouselProduct: React.FC<CarouselProductProps> = (props) => {
         {isHeading ? <NavigationItem text={"все"} /> : null}
       </div>
       <Carousel
+        breakPoints={breakPoints}
         isRTL={false}
-        itemsToShow={5}
+        // itemsToShow={5}
         pagination={false}
         renderArrow={Button}
         itemPadding={[0, 20, 0, 0]}

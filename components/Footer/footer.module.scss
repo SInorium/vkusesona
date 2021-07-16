@@ -31,24 +31,36 @@
 }
 
 .content {
+  display: flex;
   justify-content: space-evenly;
-  text-transform: capitalize;
+  gap: 1rem;
 
   .list {
-    // margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
     &:nth-child(4) {
       margin-top: 1rem;
     }
 
     &__item {
-      margin-bottom: 0.5rem;
+      display: inline-block;
+      // margin-bottom: 0.5rem;
       line-height: 19.5px;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
     }
   }
 
   .item_title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 
   .contact {
@@ -70,11 +82,12 @@
   justify-content: flex-end;
   align-items: center;
   margin-top: 60px;
+  gap: 2rem;
 
   &__icon {
-    &:not(:last-child) {
-      margin-right: 2rem;
-    }
+    // &:not(:last-child) {
+    //   margin-right: 2rem;
+    // }
   }
 }
 
@@ -92,10 +105,11 @@
 .payment_method {
   display: flex;
   justify-content: center;
+  gap: 2.75rem;
 
   &__icon {
-    &:not(:last-child) {
-      margin-right: 2.75rem;
-    }
+    // &:not(:last-child) {
+    //   margin-right: 2.75rem;
+    // }
   }
 }

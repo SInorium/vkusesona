@@ -9,6 +9,7 @@ import {
   Banner,
   Footer,
   Container,
+  MobileMenu,
 } from "@/components";
 
 import Link from "next/link";

@@ -6,6 +6,9 @@ module.exports = {
     loader: "imgix",
     path: "/",
   },
+  sassOptions: {
+    includePaths: [path.join(__dirname, "/public/styles")],
+  },
 };
 // module.exports = [
 //   {

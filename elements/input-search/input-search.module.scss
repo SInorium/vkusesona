@@ -7,13 +7,17 @@
   input {
     border-radius: 10px;
     background: var(--white);
-    padding: 14px 56px;
+    padding: 14px;
 
     transition: all 0.2s ease;
     border: 1px solid transparent;
 
     &::placeholder {
       color: var(--gray);
+    }
+
+    &[data-icon-type="search"] {
+      padding: 14px 56px;
     }
 
     &[data-error="true"] {

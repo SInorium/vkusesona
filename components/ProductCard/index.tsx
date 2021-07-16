@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Cart from "@/images/icons/cart.svg";
-import Like from "@/images/icons/like.svg";
+import Like from "@/images/icons/like";
 import styles from "./product_card.module.scss";
 import { ProductCardProps } from "types";
 import { Tag } from "@/elements";

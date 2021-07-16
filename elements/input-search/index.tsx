@@ -19,6 +19,7 @@ const InputSearch: React.FC<InputSearchProps> = (props) => {
         value={value}
         // data-error={}
         placeholder={placeholder || "Placeholder "}
+        data-icon-type={iconType}
       />
       {iconType === "search" ? (
         <Search className={styles.input__icon} />

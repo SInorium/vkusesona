@@ -1,0 +1,65 @@
+@import "variables";
+$burger2AnimationTime: 0.35s;
+
+.menu {
+  display: none;
+  min-width: 20px;
+  height: 14px;
+  position: relative;
+  overflow: hidden;
+  // margin: 0 12px 0 38px;
+  cursor: pointer;
+  background: transparent;
+  z-index: 2;
+  border: none;
+  border-right: 0;
+  box-sizing: content-box;
+
+  .bar {
+    width: 100%;
+    height: 2px;
+    display: block;
+    position: absolute;
+    left: 0;
+    background: var(--green);
+    border-radius: 1px;
+
+    transition: all $burger2AnimationTime;
+    pointer-events: none;
+  }
+
+  .bar:nth-child(1) {
+    top: 0px;
+  }
+
+  .bar:nth-child(2) {
+    top: 6px;
+    width: 90%;
+  }
+
+  .bar:nth-child(3) {
+    top: 12px;
+    width: 90%;
+  }
+
+  &[data-toggled="true"] {
+    .bar:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .bar:nth-child(2) {
+      left: -100%;
+    }
+
+    .bar:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+      width: 100%;
+    }
+  }
+
+  @include breakpoint_max("tablet_lg") {
+    display: block;
+  }
+}

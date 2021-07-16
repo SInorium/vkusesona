@@ -1,0 +1,142 @@
+.layout {
+  position: fixed;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(28, 27, 47, 0.4);
+
+  &[data-toggled="false"] {
+    display: none;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  transition: visibility 100ms, width 200ms linear;
+
+  width: calc(100% - (100% - 768px) / 2 - 314px);
+
+  &[data-toggled="false"] {
+    width: 0;
+    left: 0;
+    visibility: hidden;
+  }
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  visibility: visible;
+
+  background: var(--white);
+}
+
+.content_wrapper {
+  padding-top: 100px;
+  border: 1px solid var(--secondary-gray);
+}
+
+.cart_wrapper {
+  position: absolute;
+  top: 65px;
+  right: 18px;
+
+  display: flex;
+}
+.cart_icon {
+  margin-right: 0.75rem;
+
+  path {
+    fill: var(--green);
+  }
+}
+
+.content {
+  justify-content: center;
+  gap: 80px;
+
+  border-top: 1px solid var(--secondary-gray);
+  border-bottom: 1px solid var(--secondary-gray);
+  padding: 20px;
+
+  &_item {
+    display: flex;
+    gap: 12px;
+  }
+
+  &_icon__like {
+    path {
+      stroke-width: 2px;
+      stroke: var(--dark-gray);
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    padding-right: 1.5rem;
+
+    border-bottom: 1px solid var(--secondary-gray);
+    color: var(--black);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--secondary-green);
+      color: var(--white);
+    }
+  }
+  &__description {
+  }
+
+  &__icon {
+    path {
+      stroke: var(--white);
+    }
+  }
+}
+
+.location {
+  margin: 16px;
+  margin-bottom: 44px;
+  &_item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 0.75rem;
+  }
+  &_label {
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  &_description {
+  }
+  &_icon {
+    &__location {
+      path {
+        stroke: var(--dark-gray);
+      }
+    }
+  }
+}
+
+.mobile_menu__wrapper {
+  margin: auto 0.75rem 0.5rem;
+}

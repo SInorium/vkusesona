@@ -56,7 +56,7 @@ const Footer: FC<FooterProps> = (props) => {
         </div>
       </div>
       <Container className={footer.wrapper_container}>
-        <div className={footer.content + " d-flex"}>
+        <div className={footer.content}>
           {footerMock.map((list) => {
             return (
               <ul className={footer.list + " text-sm"} key={list.title}>
