@@ -1,12 +1,18 @@
+@import "variables";
+
 .list {
   align-items: center;
-  margin: 0 120px;
+  gap: 2rem;
   margin-bottom: 8px;
+  padding: 0 120px;
 
   &_item {
     display: flex;
     align-items: center;
     cursor: pointer;
+    &:last-child {
+      margin-left: auto;
+    }
   }
 }
 .icon {
@@ -14,5 +20,28 @@
   path,
   circle {
     stroke: var(--primary-yellow-gray);
+  }
+}
+
+@include breakpoint_max("tablet_lg") {
+  .list {
+    padding: 0 2rem;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 790px) {
+  .list {
+    &_item:last-child {
+      display: none;
+    }
+  }
+}
+
+@include breakpoint_max("mobile") {
+  .list {
+    justify-content: center;
+    &_item:not(:nth-child(2)) {
+      display: none;
+    }
   }
 }

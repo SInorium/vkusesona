@@ -17,13 +17,24 @@ const CarouselItem: React.FC<CarouselItemProps> = (props) => {
           Подробнее <Quot className="icon" />
         </a>
       </div>
-      <Image
-        className="slider-item__image"
-        width={713}
-        height={404}
-        src={preview || ""}
-        alt="img"
-      />
+      {/* <div
+        className="slider-item__bg"
+        style={{
+          backgroundImage: preview,
+          backgroundPosition: "left, bottom",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></div> */}
+      <div className="image__wrapper">
+        <img
+          className="slider-item__image"
+          width={713}
+          height={404}
+          // src={preview}
+          src={`${process.env.PUBLIC_URL + preview}`}
+          alt="img"
+        />
+      </div>
     </div>
   );
 };

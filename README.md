@@ -1,7 +1,3 @@
-# Figma
-
-https://www.figma.com/file/lRMax3Nv5qeXjMW4X9mnKG/%D0%92%D0%BA%D1%83%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%D0%B0?node-id=83%3A3886
-
 # Установка #
 
 * скачать и установить [node.js](https://nodejs.org/en/)

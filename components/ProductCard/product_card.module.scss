@@ -1,3 +1,5 @@
+@import "variables";
+
 .product_card {
   position: relative;
 
@@ -6,7 +8,7 @@
   grid-template-columns: 1fr;
 
   max-width: 224px;
-  padding: 0 16px 16px;
+  padding: 0 1rem 1rem;
 
   border: 1px solid var(--secondary-gray);
   border-radius: 10px;
@@ -44,6 +46,7 @@
 
   &__description {
     min-height: 28px;
+    margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
 
@@ -79,5 +82,21 @@
         fill: var(--white);
       }
     }
+  }
+}
+
+@include breakpoint_max("mobile") {
+  .product_card {
+    max-width: 168px;
+
+    padding: 0 0.5rem 0.5rem;
+    grid-template-rows: 31px 97px 1fr;
+
+    &__description {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .product_card__image {
   }
 }

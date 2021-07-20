@@ -6,14 +6,16 @@ import styles from "./navigation_link.module.scss";
 interface NavigationItemProps {
   text: string;
   revert?: boolean;
+  className?: string;
+  color?: string;
 }
 
 const NavigationItem: React.FC<NavigationItemProps> = (props) => {
-  const { text, revert } = props;
+  const { text, revert, className, color } = props;
   return (
     <>
-      <a data-revert={revert} className={styles.link + " text-sm--b d-flex"}>
-        {text} <Quot className={styles.icon} />
+      <a data-revert={revert} className={styles.link + " " + className}>
+        {text} <Quot data-color={color} className={styles.icon} />
       </a>
     </>
   );

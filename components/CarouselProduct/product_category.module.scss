@@ -1,3 +1,5 @@
+@import "variables";
+
 .category_product {
   &__wrapper {
     position: relative;
@@ -68,5 +70,37 @@
   }
 
   &__title {
+  }
+
+  &__link {
+    margin-left: 1.5rem;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+@include breakpoint_max("mobile") {
+  .category_product {
+    &__wrapper {
+      margin-top: 2rem;
+
+      & .btn {
+        display: none;
+      }
+    }
+  }
+
+  .category_description {
+    &__wrapper {
+      margin-bottom: 1rem;
+    }
+
+    &__title {
+      font-size: 1.4375rem;
+    }
+    &__link {
+      margin-left: auto;
+    }
   }
 }

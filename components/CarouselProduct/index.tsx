@@ -19,7 +19,7 @@ const Button = ({ type, onClick, isEdge }: RenderArrowProps) => {
 interface CarouselProductProps {
   children: Element[] | any;
   title: string;
-  isHeading?: boolean;
+  isLink: boolean;
 }
 
 const breakPoints = [
@@ -34,12 +34,17 @@ const breakPoints = [
 ];
 
 const CarouselProduct: React.FC<CarouselProductProps> = (props) => {
-  const { title, isHeading } = props;
+  const { title, isLink } = props;
   return (
     <div className={styles.category_product__wrapper}>
       <div className={styles.category_description__wrapper}>
         <h2 className={styles.category_description__title}>{title}</h2>
-        {isHeading ? <NavigationItem text={"все"} /> : null}
+        {isLink ? (
+          <NavigationItem
+            className={styles.category_description__link}
+            text={"все"}
+          />
+        ) : null}
       </div>
       <Carousel
         breakPoints={breakPoints}
@@ -47,7 +52,7 @@ const CarouselProduct: React.FC<CarouselProductProps> = (props) => {
         // itemsToShow={5}
         pagination={false}
         renderArrow={Button}
-        itemPadding={[0, 20, 0, 0]}
+        itemPadding={[0, 40, 0, 0]}
       >
         {props.children}
       </Carousel>

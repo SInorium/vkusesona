@@ -1,7 +1,11 @@
 const path = require("path");
 const withReactSvg = require("next-react-svg");
+const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
+  env: {
+    PUBLIC_URL: ".",
+  },
   images: {
     loader: "imgix",
     path: "/",
@@ -9,6 +13,9 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, "/public/styles")],
   },
+  // Use the CDN in production and localhost for development.
+  // assetPrefix: ".",
+  // trailingSlash: true,
 };
 // module.exports = [
 //   {

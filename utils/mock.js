@@ -187,17 +187,17 @@ export const commentsData = [
 export const mockData = [
   {
     title: "Масленичная скидка на все блины",
-    description: "Каждый третий блин бесплатно, даже если он вышел комом",
+    description: "Регистрируйтесь и оплачивайте бонусами покупки",
     preview: "/images/hero_image.png",
   },
   {
     title: "Масленичная скидка на все блины",
-    description: "Каждый третий блин бесплатно, даже если он вышел комом",
+    description: "Регистрируйтесь и оплачивайте бонусами покупки",
     preview: "/images/hero_image.png",
   },
   {
     title: "Масленичная скидка на все блины",
-    description: "Каждый третий блин бесплатно, даже если он вышел комом",
+    description: "Регистрируйтесь и оплачивайте бонусами покупки",
     preview: "/images/hero_image.png",
   },
 ];

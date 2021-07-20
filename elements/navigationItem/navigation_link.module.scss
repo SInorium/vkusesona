@@ -1,4 +1,5 @@
 .link {
+  display: flex;
   align-items: center;
   cursor: pointer;
   font-weight: 400;
@@ -8,6 +9,12 @@
 
     & > path {
       stroke: var(--primary-yellow-gray);
+    }
+
+    &[data-color="white"] {
+      & > path {
+        stroke: var(--white);
+      }
     }
   }
 

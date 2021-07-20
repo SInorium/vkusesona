@@ -1,3 +1,5 @@
+@import "variables";
+
 .list {
   justify-content: center;
   margin-top: 1rem;
@@ -17,5 +19,11 @@
     &:hover {
       color: var(--green);
     }
+  }
+}
+
+@include breakpoint_max("tablet_lg") {
+  .list {
+    display: none;
   }
 }

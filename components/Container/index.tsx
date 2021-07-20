@@ -7,9 +7,7 @@ interface ContainerProps {
 
 const Container: React.FC<ContainerProps> = (props) => {
   const { children, className } = props;
-  return (
-    <div className={className ? className : container.main}>{children}</div>
-  );
+  return <div className={className + " " + container.main}>{children}</div>;
 };
 
 export default Container;

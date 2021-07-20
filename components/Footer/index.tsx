@@ -55,7 +55,7 @@ const Footer: FC<FooterProps> = (props) => {
           <InputSearch iconType={"submit"} placeholder={"E-mail"} />
         </div>
       </div>
-      <Container className={footer.wrapper_container}>
+      <Container className={footer.container}>
         <div className={footer.content}>
           {footerMock.map((list) => {
             return (
@@ -81,9 +81,9 @@ const Footer: FC<FooterProps> = (props) => {
                 <h4 className={footer.item_title + " green"}>8-495-495-9595</h4>
               </a>
             </div>
-            <span className={footer.tel_desc + " text-sm gray"}>
+            <div className={footer.tel_desc + " text-sm gray"}>
               Принимаем звонки ежедневно с 09.00 до 22.00
-            </span>
+            </div>
             <div className={footer.social}>
               <Instagram className={footer.social__icon} />
               <Facebook className={footer.social__icon} />
@@ -93,7 +93,7 @@ const Footer: FC<FooterProps> = (props) => {
         </div>
         <div className={footer.policy + " text-sm gray"}>
           <p>© 2021 Вкусезона</p>
-          <div>
+          <div className={footer.policy__wrapper_link}>
             <a className={footer.policy__link} href="">
               Политика конфиденциальности
             </a>

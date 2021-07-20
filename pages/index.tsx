@@ -30,7 +30,7 @@ export default function Home() {
       <Container>
         <main className={styles.main}>
           <CarouselImage slides={mockData} isPagination={false} />
-          <CarouselProduct title={"Популярные товары"}>
+          <CarouselProduct title={"Популярные товары"} isLink>
             {productCards.map((product, id) => {
               return (
                 <a
@@ -49,7 +49,7 @@ export default function Home() {
             })}
           </CarouselProduct>
           <Advantage />
-          <CarouselProduct title={"Самое выгодное сегодня"}>
+          <CarouselProduct title={"Самое выгодное сегодня"} isLink>
             {productCards.map((product, id) => {
               return (
                 <ProductCard
@@ -64,7 +64,7 @@ export default function Home() {
             })}
           </CarouselProduct>
           <Banner />
-          <CarouselProduct title={"Без сахара"}>
+          <CarouselProduct title={"Без сахара"} isLink>
             {productCards.map((product, id) => {
               return (
                 <ProductCard

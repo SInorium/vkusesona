@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import bannerImg from "@/images/banner.png";
+import bannerImgMin from "@/images/banner_min.png";
 import banner from "./banner.module.scss";
 import Link from "next/link";
+import NavigationItem from "elements/navigationItem";
 
 const Banner = () => {
   return (
@@ -20,11 +22,22 @@ const Banner = () => {
             Подробнее
           </Link>
         </button>
+        <NavigationItem
+          color={"white"}
+          text={"Подробнее"}
+          className={banner.link}
+        />
       </div>
       <div className={"next-image__wrapper"}>
         <Image
-          className={banner.image}
+          className={banner.image + " " + banner.image__desktop}
           src={bannerImg}
+          layout={"fill"}
+          objectFit={"cover"}
+        />
+        <Image
+          className={banner.image + " " + banner.image__mobile}
+          src={bannerImgMin}
           layout={"fill"}
           objectFit={"cover"}
         />

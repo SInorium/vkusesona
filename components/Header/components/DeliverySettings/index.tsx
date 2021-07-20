@@ -19,11 +19,7 @@ const DeliverySettings: React.FC<DeliverySettingsProps> = (props) => {
   const { deliveryWay } = props;
   const isDeliveryWay = activeDeliveryWay === "delivery"; // это под модалку заготовочка
   return (
-    <ul
-      className={
-        deliverySettingsStyle.list + " d-flex justify-space-between text-xs"
-      }
-    >
+    <ul className={deliverySettingsStyle.list + " d-flex text-xs"}>
       <li className={deliverySettingsStyle.list_item}>
         <Switcher
           handleDeliveryWay={(deliveryWay: any) =>

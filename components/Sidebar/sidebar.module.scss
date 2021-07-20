@@ -1,3 +1,5 @@
+@import "variables";
+
 .layout {
   position: fixed;
   display: block;
@@ -139,4 +141,14 @@
 
 .mobile_menu__wrapper {
   margin: auto 0.75rem 0.5rem;
+}
+
+@include breakpoint_max("mobile") {
+  .content_wrapper {
+    padding-top: 80px;
+  }
+
+  .cart_wrapper {
+    top: 48px;
+  }
 }

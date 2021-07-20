@@ -18,7 +18,7 @@ import User from "@/images/icons/user.svg";
 import Search from "@/images/icons/search.svg";
 
 import headerStyle from "./header.module.scss";
-import Sidebar from "components/Sidebar";
+import { Sidebar, Container } from "@/components";
 
 const deliveryWay = [
   {
@@ -95,8 +95,9 @@ const Header = () => {
         </nav>
         <Search className={headerStyle.search_icon__mobile} />
       </div>
+      {/* <Container className={headerStyle.container}> */}
       <ProductNavigation category={ProductCategory} />
-      {/* <MobileMenu /> */}
+      {/* </Container> */}
     </header>
   );
 };
