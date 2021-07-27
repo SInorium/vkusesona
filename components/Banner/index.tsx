@@ -15,11 +15,8 @@ const Banner = () => {
           Регистрируйтесь и оплачивайте бонусами покупки{" "}
         </p>
         <button type={"button"} className={banner.button_link}>
-          <Link
-            prefetch={false}
-            href={"https://nextjs.org/docs/api-reference/next/link"}
-          >
-            Подробнее
+          <Link prefetch={false} href={"/"}>
+            <a href="">Подробнее</a>
           </Link>
         </button>
         <NavigationItem

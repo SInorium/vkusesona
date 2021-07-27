@@ -1,3 +1,5 @@
+@import "variables";
+
 .wrapper {
   display: grid;
   grid-template-columns: 80px 1fr;
@@ -7,6 +9,7 @@
 }
 
 .image {
+  border-radius: 10px;
 }
 
 .description_wrapper {
@@ -32,4 +35,10 @@
 
 .price {
   margin-left: 0.25rem;
+}
+
+@include breakpoint_max("mobile") {
+  .title {
+    font-size: 0.75rem;
+  }
 }

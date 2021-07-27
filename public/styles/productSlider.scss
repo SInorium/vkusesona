@@ -1,6 +1,9 @@
+@import "variables";
+
 .product_slider {
   position: relative;
   max-width: 800px;
+  height: fit-content;
   .slider-button {
     &:first-child {
       right: 64px;
@@ -11,6 +14,47 @@
   & > .rec {
     & > .rec-slider-container {
       margin: 0;
+    }
+  }
+
+  & > .rec-pagination {
+    display: none;
+  }
+}
+
+@include breakpoint_max("tablet_lg") {
+  // .product_slider {
+  //   max-width: 1440px;
+  // }
+  .rec-carousel-wrapper.product_slider {
+    // отрицательный margin-left + padding-right от контейнера
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+    & > .rec-pagination {
+      display: block;
+      position: absolute;
+      bottom: 1rem;
+      & > .rec-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+
+        margin: 0;
+        margin-right: 0.5rem;
+
+        box-shadow: none;
+        background-color: var(--white);
+      }
+      & > .rec-dot_active {
+        background-color: var(--green);
+      }
+    }
+
+    .slider-button {
+      display: none;
+    }
+
+    .slider-item__pagination {
+      display: none;
     }
   }
 }

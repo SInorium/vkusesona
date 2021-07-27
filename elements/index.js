@@ -7,7 +7,10 @@ import RecommendationProductCard from "./recommendationProductCard";
 import EnergyValueItem from "./energyValueItem";
 import AboutWrapper from "./aboutWrapper";
 import Button from "./button";
+import Pagination from "./pagination";
 import NavigationItem from "./navigationItem";
+import Select from "./select";
+import Tabs from "./tabs";
 import { RatingView, RatingEditable } from "./rating";
 
 export {
@@ -22,4 +25,7 @@ export {
   AboutWrapper,
   Button,
   NavigationItem,
+  Pagination,
+  Select,
+  Tabs,
 };

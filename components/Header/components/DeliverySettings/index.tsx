@@ -22,11 +22,9 @@ const DeliverySettings: React.FC<DeliverySettingsProps> = (props) => {
     <ul className={deliverySettingsStyle.list + " d-flex text-xs"}>
       <li className={deliverySettingsStyle.list_item}>
         <Switcher
-          handleDeliveryWay={(deliveryWay: any) =>
-            handleDeliveryWay(deliveryWay)
-          }
-          activeDeliveryWay={activeDeliveryWay}
-          deliveryWay={deliveryWay}
+          handleValue={(deliveryWay: string) => handleDeliveryWay(deliveryWay)}
+          activeValue={activeDeliveryWay}
+          values={deliveryWay}
         />
       </li>
       <li className={deliverySettingsStyle.list_item}>

@@ -33,18 +33,20 @@ export default function Home() {
           <CarouselProduct title={"Популярные товары"} isLink>
             {productCards.map((product, id) => {
               return (
-                <a
+                <Link
                   href={`products/${product.path}`}
                   key={product.imageAlt && id}
                 >
-                  <ProductCard
-                    image_path__mini={product.image_path__mini}
-                    imageAlt={product.imageAlt}
-                    price={product.price}
-                    discount={product.discount}
-                    tagName={product.tagName}
-                  />
-                </a>
+                  <a>
+                    <ProductCard
+                      image_path__mini={product.image_path__mini}
+                      imageAlt={product.imageAlt}
+                      price={product.price}
+                      discount={product.discount}
+                      tagName={product.tagName}
+                    />
+                  </a>
+                </Link>
               );
             })}
           </CarouselProduct>

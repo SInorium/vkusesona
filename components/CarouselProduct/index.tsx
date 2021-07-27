@@ -1,9 +1,8 @@
 import React from "react";
 import Carousel, { RenderArrowProps } from "react-elastic-carousel";
-
 import styles from "./product_category.module.scss";
 
-import Quot from "@/images/icons/quot.svg";
+import QuotIcon from "@/images/icons/quot";
 import { NavigationItem } from "@/elements";
 
 const Button = ({ type, onClick, isEdge }: RenderArrowProps) => {
@@ -11,7 +10,7 @@ const Button = ({ type, onClick, isEdge }: RenderArrowProps) => {
   return (
     <button className={styles.btn} onClick={onClick} disabled={isEdge}>
       {pointer}
-      <Quot className={styles.icon} />
+      <QuotIcon strokeColor={"green"} strokeWidth={2} className={styles.icon} />
     </button>
   );
 };
@@ -20,6 +19,7 @@ interface CarouselProductProps {
   children: Element[] | any;
   title: string;
   isLink: boolean;
+  params?: any;
 }
 
 const breakPoints = [
@@ -28,13 +28,13 @@ const breakPoints = [
   //tablet_md
   { width: 658, itemsToShow: 3 },
   // tablet_lg
-  { width: 700, itemsToShow: 3.6 },
+  { width: 700, itemsToShow: 3.1, outerSpacing: 0 },
   //desctop_sm
-  { width: 900, itemsToShow: 5 },
+  { width: 900, itemsToShow: 5, outerSpacing: 0 },
 ];
 
 const CarouselProduct: React.FC<CarouselProductProps> = (props) => {
-  const { title, isLink } = props;
+  const { title, isLink, params } = props;
   return (
     <div className={styles.category_product__wrapper}>
       <div className={styles.category_description__wrapper}>
@@ -47,12 +47,14 @@ const CarouselProduct: React.FC<CarouselProductProps> = (props) => {
         ) : null}
       </div>
       <Carousel
-        breakPoints={breakPoints}
+        breakPoints={params ? params : breakPoints}
         isRTL={false}
         // itemsToShow={5}
+        itemPosition={"START"}
         pagination={false}
         renderArrow={Button}
-        itemPadding={[0, 40, 0, 0]}
+        outerSpacing={0}
+        itemPadding={[0, 20, 0, 0]}
       >
         {props.children}
       </Carousel>

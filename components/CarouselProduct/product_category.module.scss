@@ -8,7 +8,7 @@
 
     & .btn {
       position: absolute;
-      right: 56px;
+      right: 15px;
       top: 0;
 
       display: flex;
@@ -38,7 +38,7 @@
       }
 
       &:first-child {
-        right: 112px;
+        right: 71px;
         > svg {
           transform: rotate(180deg);
         }

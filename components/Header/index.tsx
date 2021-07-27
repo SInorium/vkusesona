@@ -19,6 +19,8 @@ import Search from "@/images/icons/search.svg";
 
 import headerStyle from "./header.module.scss";
 import { Sidebar, Container } from "@/components";
+import LikeIcon from "@/images/icons/like";
+import { productCategory } from "utils/mock";
 
 const deliveryWay = [
   {
@@ -31,23 +33,12 @@ const deliveryWay = [
   },
 ];
 
-const ProductCategory = [
-  "Акции",
-  "Мясо",
-  "Птица",
-  "Овощи, фрукты, ягоды",
-  "Морепродукты",
-  "Сыры",
-  "Выпечка",
-  "Орехи и сухофрукты",
-  "Специи и соусы",
-];
-
 const Header = () => {
   const scroll = useWindowScroll();
   const isHiddenHeader = scroll > 30;
 
   const [isSidebarToggled, setSidebarToggled] = React.useState(false);
+  const [isLiked, handleLike] = React.useState(false);
 
   return (
     <header className={headerStyle.header} data-hidden={isHiddenHeader}>
@@ -79,9 +70,17 @@ const Header = () => {
               />
               Профиль
             </li>
-            <li className={headerStyle.list_item + " text-xs"}>
-              <Like
-                className={`${headerStyle.item_icon} ${headerStyle.item_icon__like}`}
+            <li
+              className={headerStyle.list_item + " text-xs"}
+              onClick={() => handleLike(!isLiked)}
+            >
+              <LikeIcon
+                isLiked={isLiked}
+                // isLiked={isLiked}
+                strokeColor={"green"}
+                strokeWidth={2}
+                className={headerStyle.item_icon}
+                fillColor={"transparent"}
               />
               Избранное
             </li>
@@ -95,9 +94,7 @@ const Header = () => {
         </nav>
         <Search className={headerStyle.search_icon__mobile} />
       </div>
-      {/* <Container className={headerStyle.container}> */}
-      <ProductNavigation category={ProductCategory} />
-      {/* </Container> */}
+      <ProductNavigation category={productCategory} />
     </header>
   );
 };

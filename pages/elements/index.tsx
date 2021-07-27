@@ -10,6 +10,7 @@ import {
   EnergyValueItem,
   AboutWrapper,
   Button,
+  Pagination,
 } from "@/elements";
 import {
   tagsMock,
@@ -29,8 +30,13 @@ const Elements = () => {
     setRating(rate);
   };
 
-  const comments = commentsData;
+  const [currentPage, setCurrentPage] = React.useState(1);
 
+  const handlePage = (value: number) => {
+    setCurrentPage(value);
+  };
+
+  const comments = commentsData;
   return (
     <>
       <Header />
@@ -95,6 +101,11 @@ const Elements = () => {
               })}
             </div>
           </AboutWrapper>
+          <Pagination
+            page={currentPage}
+            totalPages={12}
+            handleChangePage={handlePage}
+          />
         </>
       </Container>
     </>

@@ -1,50 +1,55 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Carousel from "react-elastic-carousel";
-import Image from "next/image";
+import Link from "next/link";
 
-import { Header, Container, CarouselProduct, ProductCard } from "@/components";
+import {
+  Header,
+  Container,
+  CarouselProduct,
+  ProductCard,
+  Footer,
+} from "@/components";
 import { ProductCardMainProps } from "types";
 import {
   commentsData,
-  energyValues,
   productCards,
   reccomendCard,
   tagsMock,
 } from "../../utils/mock.js";
 import {
   CarouselButton,
-  CarouselItem,
   CarouselImage,
 } from "components/CarouselImage/components";
 import {
   AboutWrapper,
-  EnergyValueItem,
   RatingView,
   RecommendationProductCard,
   Tag,
-  Comment,
   Button,
   NavigationItem,
+  Switcher,
 } from "@/elements";
 
-import styles from "./styles.module.scss";
-import Document from "@/images/icons/document.svg";
-import Plus from "@/images/icons/plus.svg";
-import Quot from "@/images/icons/quot.svg";
-import Like from "@/images/icons/like";
+import LikeIcon from "@/images/icons/like";
+import QuotIcon from "@/images/icons/quot";
+
 import Cart from "@/images/icons/cart.svg";
+
+import styles from "./styles.module.scss";
+import ProductDescription from "./components/ProductDescription";
+import Comments from "./components/Comments";
+
+interface StaticProps {
+  params: {
+    id: string;
+  };
+}
 
 export async function getStaticPaths() {
   const paths = productCards.map((product) => ({
     params: { id: product.path },
   }));
   return { paths, fallback: false };
-}
-
-interface StaticProps {
-  params: {
-    id: string;
-  };
 }
 
 export async function getStaticProps({ params }: StaticProps) {
@@ -57,7 +62,20 @@ export async function getStaticProps({ params }: StaticProps) {
 }
 
 const Product: React.FC<ProductCardMainProps> = ({ product }) => {
+  const [activeAboutPage, handleAboutPage] = React.useState("description");
+  const [isLiked, handleLike] = React.useState(false);
+
+  const aboutPages = [
+    { label: "О товаре", value: "description" },
+    { label: "Отзывы", value: "comments" },
+  ];
   const { image_path__main, imageAlt, price, discount = 0, tagName } = product;
+
+  const carouselBreakPoints = [
+    // { width: 1, itemsToShow: 1 },
+    { width: 500, itemsToShow: 1, itemsToScroll: 1 },
+    { width: 1440, itemsToShow: 1, itemsToScroll: 1, outerSpacing: 0 },
+  ];
 
   const discountPrice = ((100 - discount) * price) / 100;
 
@@ -69,10 +87,11 @@ const Product: React.FC<ProductCardMainProps> = ({ product }) => {
       <Container className={styles.product_container}>
         <article className={styles.product_wrapper}>
           <Carousel
+            breakPoints={carouselBreakPoints}
             className={"product_slider"}
             isRTL={false}
             itemsToShow={1}
-            pagination={false}
+            // pagination={false}
             renderArrow={CarouselButton}
             itemPadding={[0, 0]}
             preventDefaultTouchmoveEvent
@@ -89,55 +108,98 @@ const Product: React.FC<ProductCardMainProps> = ({ product }) => {
               );
             })}
           </Carousel>
-          <div className={styles.product_card_wrapper}>
-            <NavigationItem revert text={"Свинина"} />
-            <div
-              style={{ position: "relative", marginTop: "1.5rem" }}
-              className={"d-inline-flex"}
-            >
-              {tagsMock.map((item, id) => {
-                return (
-                  <Tag
-                    tagName={item.tagName}
-                    discount={item.discount}
-                    key={id}
+          <div className={styles.product_slider__button_wrapper}>
+            <Link href={"#"}>
+              <a>
+                <Button type={"transparent"} width={40} height={40}>
+                  <QuotIcon
+                    strokeColor={"green"}
+                    fillColor={"none"}
+                    strokeWidth={2}
+                    transformValue={"rotate(180deg)"}
                   />
-                );
-              })}
+                </Button>
+              </a>
+            </Link>
+            <Button
+              type={"transparent"}
+              width={40}
+              height={40}
+              onClick={() => handleLike(!isLiked)}
+            >
+              <LikeIcon
+                isLiked={isLiked}
+                strokeColor={"green"}
+                fillColor={"white"}
+                strokeWidth={2}
+              />
+            </Button>
+          </div>
+          <div className={styles.product_card_wrapper}>
+            <div className={styles.product_information__wrapper}>
+              <NavigationItem
+                className={styles.product__navigation_item}
+                revert
+                text={"Свинина"}
+              />
+              <div className={styles.product_tag}>
+                {tagsMock.map((item, id) => {
+                  return (
+                    <Tag
+                      tagName={item.tagName}
+                      discount={item.discount}
+                      key={id}
+                    />
+                  );
+                })}
+              </div>
+              <div
+                className={"d-flex"}
+                style={{ marginTop: "0.5rem", gap: "0.5rem" }}
+              >
+                <RatingView transition={false} ratingValue={5} size={14} />
+                <span className={"text-sm"}>{commentsData.length} отзывов</span>
+              </div>
+              <h3 style={{ margin: 0 }}>{imageAlt}</h3>
+              <p className={styles.product_price + " text-lg"}>
+                {discount === 0 ? (
+                  <span>{price + " ₽"} / шт</span>
+                ) : (
+                  <>
+                    <span className={styles.product_price__discont}>
+                      {discountPrice + " ₽"} / шт
+                    </span>{" "}
+                    <span className={"text-lg gray cross"}>{price + " ₽"}</span>
+                  </>
+                )}
+              </p>
+              <div className={styles.product_scores + " text-sm green"}>
+                +15 бонусных баллов
+              </div>
+              <div className={styles.product_button__wrapper}>
+                <Button type={"primary"} width={236}>
+                  <span>В корзину </span>
+                  <Cart />
+                </Button>
+                <Button
+                  type={"transparent"}
+                  height={56}
+                  width={56}
+                  onClick={() => handleLike(!isLiked)}
+                >
+                  <LikeIcon
+                    isLiked={isLiked}
+                    strokeWidth={2}
+                    strokeColor={"green"}
+                    fillColor={"white"}
+                  />
+                </Button>
+              </div>
+              <p className={styles.product_price_help + " text-sm dark-gray"}>
+                Точная стоимость товара зависит от веса и будет известна после
+                сборки заказа.
+              </p>
             </div>
-            <div className={"d-flex"} style={{ marginTop: "0.5rem" }}>
-              <RatingView transition={false} ratingValue={5} size={14} />
-              <span className={"text-sm"}>{commentsData.length} отзывов</span>
-            </div>
-            <h3 style={{ margin: 0 }}>{imageAlt}</h3>
-            <p className={styles.product_price + " text-lg"}>
-              {discount === 0 ? (
-                <span>{price + " ₽"} / шт</span>
-              ) : (
-                <>
-                  <span className={styles.product_price__discont}>
-                    {discountPrice + " ₽"} / шт
-                  </span>{" "}
-                  <span className={"text-lg gray cross"}>{price + " ₽"}</span>
-                </>
-              )}
-            </p>
-            <div className={styles.product_scores + " text-sm green"}>
-              +15 бонусных баллов
-            </div>
-            <div className={styles.product_button__wrapper}>
-              <Button type={"primary"} width={236}>
-                <span>В корзину </span>
-                <Cart />
-              </Button>
-              <Button type={"transparent"} height={56} width={56}>
-                <Like />
-              </Button>
-            </div>
-            <p className={styles.product_price_help + " text-sm dark-gray"}>
-              Точная стоимость товара зависит от веса и будет известна после
-              сборки заказа.
-            </p>
             <div className={styles.product_recommendation__wrapper}>
               {reccomendCard.map((recProduct, id) => {
                 return (
@@ -154,131 +216,83 @@ const Product: React.FC<ProductCardMainProps> = ({ product }) => {
           </div>
         </article>
         <article className={styles.product_description}>
-          <AboutWrapper about_title={""}>
-            <h3>О товаре</h3>
-          </AboutWrapper>
-          <AboutWrapper about_title={"Описание"}>
-            <p>
-              Продукт крупнокусковой относится к категории Б, не содержит в
-              составе кости и какие-либо примеси. Из говяжьей шеи <br />
-              получаются очень наваристые и вкусные бульоны.
-            </p>
-            <br />
-            <p>
-              При длительной термической обработке получается нежной, мягкой с
-              бархатистой текстурой. Также шею можно запекать, <br /> тушить и
-              получать из нее великолепный фарш.
-            </p>
-          </AboutWrapper>
-          <AboutWrapper
-            about_title={"Энергетическая ценность на 100 г продукта"}
-          >
-            <div className="d-flex" style={{ gap: "0.75rem" }}>
-              {energyValues.map((energyItem, id) => {
-                return (
-                  <EnergyValueItem
-                    title={energyItem.title}
-                    value={energyItem.value}
-                    key={id}
-                  />
-                );
-              })}
-            </div>
-          </AboutWrapper>
-          <AboutWrapper about_title={"Условия хранения"}>
-            <p>
-              При температуре от -2 до +4 °С. После вскрытия хранится 24 часа
-              при температуре от +2 до +5 °С. <br /> В замороженном виде 6
-              месяцев.
-            </p>
-          </AboutWrapper>
-          <AboutWrapper about_title={"Срок годности"}>
-            <p>
-              При температуре от -2 до +4 °С. После вскрытия хранится 24 часа
-              при температуре от +2 до +5 °С. <br /> В замороженном виде 6
-              месяцев.
-            </p>
-          </AboutWrapper>
-          <AboutWrapper about_title={"Вес / объем"}>
-            <p>1 530 г</p>
-          </AboutWrapper>
-          <AboutWrapper about_title={"Сертифкаты и лицензии"}>
-            <div className={styles.product_document__wrapper}>
-              <div className={styles.product_document + " text-sm"}>
-                <Document />
-                <a href="#" target={"_self"}>
-                  Ветеринарское свидетельство
-                </a>
-              </div>
-              <div className={styles.product_document + " text-sm"}>
-                <Document />
-                <a href="#" target={"_self"}>
-                  Ветеринарское свидетельство
-                </a>
-              </div>
-            </div>
-          </AboutWrapper>
-          <AboutWrapper
-            font_size={25}
-            about_title={`Отзывы (${commentsData.length})`}
-          >
-            <div className={styles.product_comment__wrapper}>
-              {commentsData.map((comment, id) => {
-                return (
-                  <Comment
-                    author={comment.author}
-                    date={comment.date}
-                    rating={comment.rating}
-                    text={comment.text}
-                    key={id}
-                  />
-                );
-              })}
-            </div>
-          </AboutWrapper>
-          <section>
-            <CarouselProduct
-              isHeading={false}
-              title={"С этим товаром покупают"}
+          <div className={styles.description_wrapper__desktop}>
+            <AboutWrapper
+              font_size={25}
+              about_title={"О товаре"}
+            ></AboutWrapper>
+            <ProductDescription />
+            <AboutWrapper
+              font_size={25}
+              about_title={`Отзывы (${commentsData.length})`}
             >
+              <Comments />
+            </AboutWrapper>
+          </div>
+          <div className={styles.description_wrapper__mobile}>
+            <Switcher
+              values={aboutPages}
+              handleValue={handleAboutPage}
+              activeValue={activeAboutPage}
+            />
+            {activeAboutPage === "description" ? (
+              <ProductDescription />
+            ) : (
+              <>
+                <AboutWrapper
+                  font_size={25}
+                  about_title={`Отзывы (${commentsData.length})`}
+                >
+                  <Comments />
+                </AboutWrapper>
+              </>
+            )}
+          </div>
+          <section className={styles.product_carousel}>
+            <CarouselProduct isLink={false} title={"С этим товаром покупают"}>
               {productCards.map((product, id) => {
                 return (
-                  <a
+                  <Link
                     href={`products/${product.path}`}
                     key={product.imageAlt && id}
                   >
-                    <ProductCard
-                      image_path__mini={product.image_path__mini}
-                      imageAlt={product.imageAlt}
-                      price={product.price}
-                      discount={product.discount}
-                      tagName={product.tagName}
-                    />
-                  </a>
+                    <a>
+                      <ProductCard
+                        image_path__mini={product.image_path__mini}
+                        imageAlt={product.imageAlt}
+                        price={product.price}
+                        discount={product.discount}
+                        tagName={product.tagName}
+                      />
+                    </a>
+                  </Link>
                 );
               })}
             </CarouselProduct>
-            <CarouselProduct isHeading={false} title={"Подходящие рецепты"}>
+            <CarouselProduct isLink={false} title={"Подходящие рецепты"}>
               {productCards.map((product, id) => {
                 return (
-                  <a
+                  <Link
                     href={`products/${product.path}`}
                     key={product.imageAlt && id}
                   >
-                    <ProductCard
-                      image_path__mini={product.image_path__mini}
-                      imageAlt={product.imageAlt}
-                      price={product.price}
-                      discount={product.discount}
-                      tagName={product.tagName}
-                    />
-                  </a>
+                    <a>
+                      <ProductCard
+                        image_path__mini={product.image_path__mini}
+                        imageAlt={product.imageAlt}
+                        price={product.price}
+                        discount={product.discount}
+                        tagName={product.tagName}
+                      />
+                    </a>
+                  </Link>
                 );
               })}
             </CarouselProduct>
           </section>
         </article>
       </Container>
+      <Footer />
     </>
   );
 };

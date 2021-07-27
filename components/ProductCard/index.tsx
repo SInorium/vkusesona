@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Cart from "@/images/icons/cart.svg";
-import Like from "@/images/icons/like";
+import LikeIcon from "@/images/icons/like";
 import styles from "./product_card.module.scss";
 import { ProductCardProps } from "types";
 import { Tag } from "@/elements";
@@ -15,7 +15,11 @@ const ProductCard: FC<ProductCardProps> = (props) => {
     <div className={styles.product_card}>
       <div className={styles.product_card__tag_wrapper}>
         <Tag tagName={tagName} discount={discount} />
-        <Like className={styles.product_card__icon_like} />
+        <LikeIcon
+          strokeWidth={2}
+          strokeColor=""
+          className={styles.product_card__icon_like}
+        />
       </div>
       <Image
         className={styles.product_card__image}

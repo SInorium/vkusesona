@@ -1,0 +1,25 @@
+.wrapper {
+  position: relative;
+  max-width: 224px;
+  width: 224px;
+  height: 168px;
+  background-color: var(--light-yellow);
+  padding: 1.5rem;
+}
+
+.title {
+}
+
+.image_wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 133px;
+  width: 100%;
+
+  height: 60%;
+}
+
+.image {
+  mix-blend-mode: multiply;
+}

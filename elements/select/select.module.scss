@@ -1,0 +1,63 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+
+  position: relative;
+
+  max-width: fit-content;
+  width: 100%;
+  min-width: 122px;
+
+  padding: 0.75rem 1rem;
+
+  background-color: var(--secondary-light-gray);
+  border-radius: 10px;
+
+  font-size: 0.81rem;
+  line-height: 1rem;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  white-space: nowrap;
+  & > svg {
+    transform: rotate(90deg);
+    transition: all 0.2s ease;
+  }
+  &[data-toggle="true"] {
+    z-index: 10;
+    & > svg {
+      transform: rotate(270deg);
+    }
+  }
+}
+
+.options_list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+
+  position: absolute;
+  top: 40px;
+  right: 0;
+
+  padding: 0.75rem 0.5rem;
+
+  border: 1px solid var(--secondary-light-gray);
+  box-shadow: 0 2px 4px var(--secondary-gray);
+  background-color: var(--white);
+
+  border-width: 0 1px 1px 1px;
+  border-radius: 10px;
+
+  max-height: 204px;
+  overflow-y: auto;
+
+  z-index: 1;
+
+  transition: max-height 200ms ease-in;
+}

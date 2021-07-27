@@ -99,6 +99,102 @@ export const productCards = [
   },
 ];
 
+export const productCategory = [
+  { name: "Акции", path: "stock" },
+  { name: "Мясо", path: "meat" },
+  { name: "Птица", path: "bird" },
+  { name: "Овощи, фрукты, ягоды", path: "vegetables" },
+  { name: "Морепродукты", path: "seafood" },
+  { name: "Сыры", path: "cheeses" },
+  { name: "Выпечка", path: "bakery_products" },
+  { name: "Орехи и сухофрукты", path: "nuts" },
+  { name: "Специи и соусы", path: "spices" },
+];
+
+export const categoryCardData = [
+  {
+    title: "Мясо",
+    preview: "/images/product_card_mini1.png",
+    categoryList: [
+      "Свинина",
+      "Ягнятина, баранина",
+      "Полуфабрикаты",
+      "Говядина",
+      "Кролик",
+    ],
+  },
+  {
+    title: "Птица",
+    preview: "/images/product_card_mini6.png",
+    categoryList: [
+      "Курица",
+      "Индейка",
+      "Утка и гусь",
+      "Перепела, цесарка",
+      "Кролик",
+      "",
+    ],
+  },
+  {
+    title: "Овощи, фрукты, ягоды",
+    preview: "/images/product_card_mini7.png",
+    categoryList: [
+      "Зелень, салат",
+      "Овощи свежие",
+      "Фрукты свежие",
+      "Экзотические фрукты",
+      "Ягоды",
+      "Грибы",
+    ],
+  },
+  {
+    title: "Морепродукты",
+    preview: "/images/product_card_mini8.png",
+    categoryList: ["Рыба", "Икра", "", "", "", ""],
+  },
+  {
+    title: "Выпечка",
+    preview: "/images/product_card_mini5.png",
+    categoryList: ["Хлеб", "Лепешки", "Лаваш", "", "", ""],
+  },
+  {
+    title: "Орехи и сухофрукты",
+    preview: "/images/product_card_mini2.png",
+    categoryList: [
+      "Орехи очищенные",
+      "Орехи в скорлупе",
+      "Орехи жареные",
+      "Орехи соленые",
+      "Сухофрукты",
+      "",
+    ],
+  },
+  {
+    title: "Специи и соусы",
+    preview: "/images/product_card_mini4.png",
+    categoryList: [
+      "Специи, соль, сахар",
+      "Соусы",
+      "Масла и маринады",
+      "",
+      "",
+      "",
+    ],
+  },
+  {
+    title: "Сыры",
+    preview: "/images/product_card_mini3.png",
+    categoryList: [
+      "Твердые и полутвердые",
+      "Мягкие, плавленные, рассольные",
+      "Сыры с плесенью",
+      "Из козьего и овечьего молока",
+      "",
+      "",
+    ],
+  },
+];
+
 export const reccomendCard = [
   {
     title: "Рибай стейк Аргентина",

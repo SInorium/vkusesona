@@ -4,7 +4,7 @@ import Link from "next/link";
 import HomeIcon from "@/images/icons/home.svg";
 import CatalogIcon from "@/images/icons/catalog_search.svg";
 import Cart from "@/images/icons/cart.svg";
-import Like from "@/images/icons/like";
+import LikeIcon from "@/images/icons/like";
 import ProfileIcon from "@/images/icons/profile.svg";
 
 import style from "./mobileMenu.module.scss";
@@ -27,7 +27,9 @@ const mobileMenuNavigation = [
   },
   {
     label: "Избранное",
-    icon: <Like className={style.like} />,
+    icon: (
+      <LikeIcon strokeColor={"green"} strokeWidth={2} className={style.like} />
+    ),
     to: "/",
   },
   {

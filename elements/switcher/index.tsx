@@ -2,28 +2,28 @@ import React from "react";
 import style from "./switcher.module.scss";
 
 interface SwitcherProps {
-  activeDeliveryWay: string;
-  deliveryWay: deliveryWayType[];
-  handleDeliveryWay(value: string): void;
+  activeValue: string;
+  values: ValuesType[];
+  handleValue(value: string): void;
 }
 
-interface deliveryWayType {
+interface ValuesType {
   label: string;
   value: string;
 }
 
 const Switcher: React.FC<SwitcherProps> = (props) => {
-  const { deliveryWay, activeDeliveryWay, handleDeliveryWay } = props;
+  const { values, activeValue, handleValue } = props;
   return (
     <>
-      {deliveryWay.map(({ label, value }, id) => {
-        const active = value === activeDeliveryWay;
+      {values.map(({ label, value }, id) => {
+        const active = value === activeValue;
         return (
           <button
             key={id}
             data-active={active}
             className={style.switcher}
-            onClick={() => handleDeliveryWay(value)}
+            onClick={() => handleValue(value)}
           >
             {label}
           </button>

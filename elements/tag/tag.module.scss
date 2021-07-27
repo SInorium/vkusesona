@@ -20,9 +20,9 @@
   white-space: nowrap;
   z-index: 1;
 
-  &:not(:last-child) {
-    margin-right: 0.5rem;
-  }
+  // &:not(:last-child) {
+  //   margin-right: 0.5rem;
+  // }
 
   &[data-color_tag="новинка"] {
     background-color: var(--green);

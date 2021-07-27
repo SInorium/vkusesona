@@ -1,3 +1,5 @@
+@import "variables";
+
 .product_container {
   padding: 0 7.5rem;
   padding-top: 11rem;
@@ -9,10 +11,23 @@
   margin-top: 1.5rem;
 }
 
+.product_slider__button_wrapper {
+  display: none;
+}
+
 .product_card_wrapper {
   position: relative;
   max-width: 300px;
   width: 100%;
+}
+
+.product_tag {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  position: relative;
+  margin-top: 1.5rem;
 }
 
 .product_price {
@@ -48,6 +63,16 @@
 .product_description {
   margin-top: 3rem;
 }
+
+.description_wrapper {
+  &__desktop {
+    display: block;
+  }
+  &__mobile {
+    display: none;
+  }
+}
+
 .product_document__wrapper {
   display: flex;
   flex-direction: column;
@@ -74,3 +99,131 @@
   flex-direction: column;
   gap: 1rem;
 }
+
+.product_comment__item {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  gap: 0.5rem;
+}
+
+@include breakpoint_max("tablet_lg") {
+  .product_container {
+    padding: 5.75rem 2.125rem 0;
+    max-width: 768px;
+    // padding-top: 5.75rem;
+  }
+
+  .product_wrapper {
+    position: relative;
+    flex-direction: column;
+    margin-top: 0;
+    gap: 24px;
+  }
+
+  .product_slider__button_wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 730px;
+
+    position: absolute;
+    top: 1rem;
+  }
+
+  .product_card_wrapper {
+    max-width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .product_information__wrapper {
+    width: 334px;
+  }
+
+  .product__navigation_item {
+    display: none;
+  }
+
+  .product_tag {
+    margin-top: 0;
+  }
+
+  .product_price_help {
+    margin-bottom: 0;
+  }
+
+  .product_description {
+    & p {
+      font-size: 0.8rem;
+      line-height: 1.1rem;
+    }
+  }
+}
+
+@include breakpoint_max("tablet_md") {
+  .product_container {
+    // padding: 5.75rem 2.125rem 0;
+  }
+
+  .product_card_wrapper {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1.5rem;
+  }
+
+  .product_information__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > h3 {
+      font-size: 1.125rem;
+    }
+  }
+
+  .product_tag {
+    justify-content: center;
+  }
+
+  .product_price {
+    font-size: 0.875rem;
+  }
+
+  .product_button__wrapper {
+    & button:nth-child(2) {
+      display: none;
+    }
+  }
+
+  .product_price_help {
+    text-align: center;
+  }
+
+  .product_description {
+  }
+
+  .description_wrapper {
+    &__desktop {
+      display: none;
+    }
+    &__mobile {
+      & > button {
+        width: 50%;
+        font-size: 0.75rem;
+      }
+      display: block;
+    }
+  }
+}
+
+// @include breakpoint_max("tablet_md") {
+// }

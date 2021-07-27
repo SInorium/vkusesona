@@ -1,0 +1,21 @@
+@import "variables";
+
+.category_title {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.card_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 305px;
+  grid-auto-rows: 305px;
+
+  gap: 20px;
+}
+
+@include breakpoint_max("tablet_lg") {
+  .card_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
