@@ -2,7 +2,7 @@ import React from "react";
 
 import Image from "next/image";
 import { CarouselItemProps } from "types";
-import Quot from "@/images/icons/quot.svg";
+import QuotIcon from "@/images/icons/quot";
 
 const CarouselItem: React.FC<CarouselItemProps> = (props) => {
   const {
@@ -14,7 +14,7 @@ const CarouselItem: React.FC<CarouselItemProps> = (props) => {
         <h2 className="slider-item__title">{title}</h2>
         <p className="slider-item__description">{description}</p>
         <a className="slider-item__link text-sm--b" href="#">
-          Подробнее <Quot className="icon" />
+          Подробнее <QuotIcon className="icon" strokeColor={"green"} />
         </a>
       </div>
       {/* <div

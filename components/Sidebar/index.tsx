@@ -9,6 +9,8 @@ import Location from "@/images/icons/location.svg";
 
 import style from "./sidebar.module.scss";
 import { MobileMenu } from "@/components";
+import QuotIcon from "@/images/icons/quot";
+import LikeIcon from "@/images/icons/like";
 
 interface SidebarProps {
   isToggled: boolean;
@@ -48,7 +50,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isToggled, onToggle }) => {
               <span className={style.content_description}>Профиль</span>
             </li>
             <li className={style.content_item}>
-              <Like className={style.content_icon__like} />
+              <LikeIcon
+                className={style.content_icon__like}
+                // strokeColor={"green"}
+              />
               <span className={style.content_description}>Избранное</span>
             </li>
           </ul>
@@ -57,7 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isToggled, onToggle }) => {
               return (
                 <li className={style.navigation__item} key={item}>
                   <span className={style.navigation__description}>{item}</span>
-                  <Quot className={style.navigation__icon} />
+                  <QuotIcon className={style.navigation__icon} />
                 </li>
               );
             })}

@@ -1,12 +1,13 @@
 import React from "react";
 import { Header, Container, Footer, CarouselProduct } from "@/components";
-import CategoryCard from "./components/CategoryCard";
-import CategoryCarouselItem from "./components/CategoryCarouselItem";
+// import { CategoryCard, CategoryCarouselItem } from "./components";
 
 import styles from "./category.module.scss";
-import { categoryCardData } from "utils/mock";
+import CategoryCarouselItem from "./components/CategoryCarouselItem";
+import CategoryCard from "./components/CategoryCard";
+// import { categoryCardData } from "utils/mock";
 
-const Category = () => {
+const Category = ({ categoryCardData = [] }: any) => {
   const carouselParams = [
     //mobile
     { width: 343, itemsToShow: 2, itemsToScroll: 2, itemPadding: [0, 7, 0, 0] },
@@ -48,16 +49,24 @@ const Category = () => {
           </CarouselProduct>
           <h2 className={styles.category_title}>Выберите категорию</h2>
           <article className={styles.card_wrapper}>
-            {categoryCardData.map((item) => {
-              return (
-                <CategoryCard
-                  key={item.title}
-                  title={item.title}
-                  preview={item.preview}
-                  listItems={item.categoryList}
-                />
-              );
-            })}
+            {categoryCardData
+              ? categoryCardData.map(
+                  (item: {
+                    title: string;
+                    preview: string;
+                    categoryList: string[];
+                  }) => {
+                    return (
+                      <CategoryCard
+                        key={item.title}
+                        title={item.title}
+                        preview={item.preview}
+                        listItems={item.categoryList}
+                      />
+                    );
+                  }
+                )
+              : null}
           </article>
         </>
       </Container>

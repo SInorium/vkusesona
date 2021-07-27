@@ -1,7 +1,7 @@
 import React from "react";
 
 interface QuotIconProps {
-  strokeColor: string;
+  strokeColor?: string;
   fillColor?: string;
   strokeWidth?: number;
   className?: string;

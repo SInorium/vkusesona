@@ -2,7 +2,7 @@ import React from "react";
 
 interface LikeIconProps {
   className?: string;
-  strokeColor: string;
+  strokeColor?: string;
   strokeWidth?: number;
   fillColor?: string;
   productId?: string;

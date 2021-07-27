@@ -10,7 +10,7 @@ interface CategoryCardProps {
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = (props) => {
-  const { title, preview, listItems } = props;
+  const { title, preview, listItems = [] } = props;
   return (
     <div className={styles.wrapper}>
       <h4 className={styles.title}>{title}</h4>

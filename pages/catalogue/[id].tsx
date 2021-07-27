@@ -58,9 +58,10 @@ const Catalogue: React.FC<NavigationCategoryProps> = ({ category }) => {
           {categoryCardData.map((item) => {
             if (item.title === name) {
               return (
-                <div className={styles.tab_wrapper}>
+                <div key={item.title} className={styles.tab_wrapper}>
                   {item.categoryList.map((tab) => (
                     <div
+                      key={tab}
                       className={styles.tab}
                       data-active={activeTab === tab}
                       onClick={() => handleTab(tab)}

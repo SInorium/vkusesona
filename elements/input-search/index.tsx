@@ -2,6 +2,7 @@ import React from "react";
 import Search from "@/images/icons/search.svg";
 import Quot from "@/images/icons/quot.svg";
 import styles from "./input-search.module.scss";
+import QuotIcon from "@/images/icons/quot";
 export interface InputSearchProps {
   value?: string;
   placeholder?: string;
@@ -25,7 +26,7 @@ const InputSearch: React.FC<InputSearchProps> = (props) => {
         <Search className={styles.input__icon} />
       ) : (
         <button type="submit" className={styles.button}>
-          <Quot className={styles.button__icon} />
+          <QuotIcon className={styles.button__icon} />
         </button>
       )}
     </label>
