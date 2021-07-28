@@ -15,8 +15,6 @@ import {
 import {
   tagsMock,
   commentsData,
-  productCards,
-  productDetail,
   reccomendCard,
   energyValues,
 } from "utils/mock";
