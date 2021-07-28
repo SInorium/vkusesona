@@ -3,13 +3,13 @@ const withReactSvg = require("next-react-svg");
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
-  // env: {
-  //   PUBLIC_URL: ".",
-  // },
-  // images: {
-  //   loader: "imgix",
-  //   path: "/",
-  // },
+  env: {
+    PUBLIC_URL: ".",
+  },
+  images: {
+    loader: "imgix",
+    path: "/",
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, "/public/styles")],
   },

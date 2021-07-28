@@ -29,14 +29,14 @@
     // 162px
     // padding: 7.5rem 10.125rem 0;
     //34px
-    padding: 92px 2.125rem 0;
+    padding: 117px 2.125rem 0;
   }
 
   @include breakpoint_max("tablet_md") {
     max-width: 768px;
 
     //34px
-    padding: 92px 2.125rem 0;
+    padding: 117px 2.125rem 0;
   }
 
   @include breakpoint_max("mobile") {

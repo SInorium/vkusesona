@@ -30,8 +30,8 @@ const CarouselItem: React.FC<CarouselItemProps> = (props) => {
           className="slider-item__image"
           width={713}
           height={404}
-          src={preview}
-          // src={`${process.env.PUBLIC_URL + preview}`}
+          // src={preview}
+          src={`${process.env.PUBLIC_URL + preview}`}
           alt="img"
         />
       </div>

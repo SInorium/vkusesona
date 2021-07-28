@@ -76,7 +76,7 @@
   font-weight: 600;
 }
 
-@include breakpoint_max("tablet_slg") {
+@include breakpoint_max("tablet_lg") {
   .card__wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
